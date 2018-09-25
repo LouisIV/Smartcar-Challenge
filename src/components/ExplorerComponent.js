@@ -9,49 +9,23 @@ class ExplorerComponent extends Component {
   render() {
     const { body } = this.props;
     if (!body) {
-      return null;
+      return <div />;
     }
     console.log(body);
     return (
-      <form onSubmit={this.handleSubmit}>
-        {body.map((item, i) => {
-          const {
-            name,
-            type,
-            disabled,
-            max,
-            maxLength,
-            min,
-            placeholder,
-            pattern,
-            readOnly,
-            required,
-            size,
-            step,
-            value
-          } = item;
-          return (
-            <label>
-              {name}
-              <input
-                type={type}
-                disabled={disabled || undefined}
-                max={max || undefined}
-                maxLength={maxLength || undefined}
-                min={min || undefined}
-                placeholder={placeholder || undefined}
-                pattern={pattern || undefined}
-                readOnly={readOnly || undefined}
-                required={required || undefined}
-                size={size || undefined}
-                step={step || undefined}
-                value={value || undefined}
-              />
-            </label>
-          );
-        })}
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          {body.map((item, i) => {
+            return (
+              <label>
+                {name}
+                <input {...item} />
+              </label>
+            );
+          })}
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     );
   }
 }
