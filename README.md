@@ -9,6 +9,7 @@ To render the [ExplorerComponent](./src/components/ExplorerComponent.js) pass in
 ```
 
 You should get something like this:
+
 ![preview](component.png)
 
 Let me know if you have any questions!
