@@ -1,28 +1,162 @@
+:root {
+  --red: salmon;
+  --secondary-grey: #6c7a89;
+}
+
 .App {
-  text-align: center;
+  text-align: left;
+  font-weight: lighter;
+  margin: 40px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.explorer {
+  display: flex;
+  font-family: sans-serif;
+  flex-direction: column;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.section {
+  margin: 25px 0 5px 0;
+}
+
+.server-response-area {
+  resize: none;
+  height: 200px;
+  background-color: #e0e0e0;
+  border: slategrey;
+  border-style: solid;
+  border-width: thin;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: smaller;
+  margin-bottom: 10px;
+}
+
+/* Text */
+
+.title {
+  font-weight: lighter;
+}
+
+.sub-title {
+  margin: 5px 0 5px 0;
+  font-weight: lighter;
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.secondary-text {
+  color: var(--secondary-grey);
+}
+
+/* Form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.form-label {
+  color: var(--secondary-grey);
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-size: medium;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.last-form-item {
+  margin-top: 0px;
+}
+
+.form-input {
+  font-size: medium;
+  padding: 5px;
+  border: slategrey;
+  border-style: solid;
+  border-width: thin;
+
+  --webkit-border-width: thin;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.displayErrors input:invalid {
+  border-color: var(--red);
+}
+
+/* Buttons */
+
+.action-buttons {
+  display: flex;
+  flex: 1;
+  justify-content: stretch;
+}
+
+.action-button {
+  background-color: slategrey;
+  border: none;
   color: white;
+  padding: 10px 20px 10px 20px;
+  margin-right: 5px;
+  font-size: smaller;
 }
 
-.App-title {
-  font-size: 1.5em;
+.last-action-button {
+  margin-right: 0px;
 }
 
-.App-intro {
-  font-size: large;
+/* Scaling */
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+  .form-input {
+    width: 275px;
+  }
+  .action-buttons {
+    justify-content: flex-start;
+    flex: 1;
+  }
+  .pattern {
+    margin-left: 10px;
+  }
+  .input-box {
+    display: block;
+    flex-direction: row;
+  }
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Small screens */
+@media all and (max-width: 600px) {
+  .form-input {
+    flex: 1;
+    flex-basis: 500px;
+  }
+  .action-buttons {
+    justify-content: space-around;
+    flex: 1;
+  }
+  .action-button {
+    flex: 1;
+  }
+  .url {
+    font-size: small;
+  }
+  .pattern {
+    margin: 10px 0px 0px 0px;
+    font-size: small;
+  }
+  .input-box {
+    flex-wrap: wrap;
+  }
 }
